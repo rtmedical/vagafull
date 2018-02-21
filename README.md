@@ -12,42 +12,55 @@ Utilizamos o framework CSS Materialize ( http://materializecss.com/). A baixo es
 Referência: https://docs.docker.com/install/#supported-platforms
 
 Usuário Linux Debian:
-'''bash
+
+```
 $ curl -fsSL get.docker.com -o get-docker.sh
 
 $ sudo sh get-docker.sh
-'''
+
+
+```
 # b) Instalar o Docker Compose:
 Referência: https://docs.docker.com/compose/install/#install-compose
-'''bash
+
+```
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s-uname -m`-o /usr/local/bin/docker-compose
 
 $ sudo chmod +x /usr/local/bin/docker-compose
-'''
+
+```
 # 2 Clonando projeto
 Referência: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 Instalando Git
-'''bash
+
+```
 $ sudo apt-get install git
-'''
+
+```
 Clonando projeto do Github:
-'''bash
+
+```
 $ git clone https://github.com/rtmedical/vagafull.git
-'''
+
+```
 # 3 Rodando Projeto
 
 # a) Acesse a pasta vagafull/docker
 
 Na pasta docker, estão todos os arquivos para construção dos contêineres, acesse ela usando o comando.
-'''bash
+
+```
 $ cd vagafull/docker
-'''
+
+```
 # b) Construa os contêineres docker
 Dentro da pasta docker, execute o docker-compose para construir os contêineres do software, neste caso iremos rodar o contêiner nginx e mariadb
-'''bash
+
+```
 $ docker-compose up -d nginx mariadb
-'''
+
+```
 # c) Migrando banco de dados
 
 Agora vamos migrar o banco de dados, o laravel utilizar o Artisan, que é a ferramenta de linha de comando do Laravel. Com ela, podemos gerar a maioria das classes que são as ferramentas disponibilizadas pelo framework.
@@ -55,7 +68,8 @@ Agora vamos migrar o banco de dados, o laravel utilizar o Artisan, que é a ferr
 Lembra que estamos rodando um contêiner?
 
 Logo temos que acessar o terminal do contêiner onde o laravel está instalado para rodar os comandos Artisan, então na pasta docker você rodará os comandos abaixo:
-'''bash
+
+```
 $ cd vagafull/docker
 
 $ echo "Entrando no container onde o laravel está instalado"
@@ -69,17 +83,21 @@ root@idconteiner $ php artisan migrate
 root@idconteiner $ echo "agora vamos sair do contêiner de volta para a pasta docker"
 
 root@idconteiner $ exit
-'''
+
+```
 # 4 Acessando software instalado
 No navegador digite o seguinte url:
-'''bash
+
+```
 http://localhost/
-'''
+
+```
 # 5 Criando CRUD para testar laravel
 Tutorial Básico de como fazer um CRUD : https://www.5balloons.info/tutorial-simple-crud-operations-in-laravel-5-5/
 
 Faça um CRUD para conhecer o framework, ele é bem simples de usar e utiliza o padrão MVC. Todos os comandos de terminal para gerar migração, criar arquivos você deve rodar dentro do contêiner
-'''bash
+
+```
 $ cd vagafull/docker
 
 $ echo "Entrando no container onde o laravel está instalado"
@@ -89,4 +107,5 @@ $ docker-compose exec workspace bash
 $ echo "Já estamos dentro do contêiner, agora execute o artisan"
 
 root@idconteiner $ php artisan MEU COMANDO…
-'''
+
+```
