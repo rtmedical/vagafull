@@ -14,7 +14,8 @@ class SpreadsheetController extends Controller
      */
     public function index()
     {
-        //
+        $spreadsheets = Spreadsheet::all();
+        return view('spreadsheets.index',compact('spreadsheets',$spreadsheets));
     }
 
     /**

@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('spreadsheets');
 });
+
+Route::resource('spreadsheets', 'SpreadsheetController');
 
 Auth::routes();
 
