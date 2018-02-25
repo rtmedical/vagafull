@@ -11,6 +11,9 @@
     "browser": true,
     "node": true
   },
+  "globals": {
+    "$": true
+  },
   "rules": {
     "no-use-before-define": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
