@@ -12,6 +12,8 @@
 
 @section('content')
   <form action="{{ route('spreadsheets.store') }}" method="POST">
+    {{ csrf_field() }}
+
     @include('layout.partials.section-a')
     <div class="divider"></div>
 
