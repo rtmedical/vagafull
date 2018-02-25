@@ -82,7 +82,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 $(function () {
   $(".button-collapse").sideNav();
-  Object(__WEBPACK_IMPORTED_MODULE_0__utils_calculations__["a" /* calculateAllOutputs */])();
+
+  if (document.getElementById("60co_input-1")) {
+    Object(__WEBPACK_IMPORTED_MODULE_0__utils_calculations__["a" /* calculateAllOutputs */])();
+    document.querySelector("form").addEventListener("blur", __WEBPACK_IMPORTED_MODULE_0__utils_calculations__["b" /* calculateOnBlur */], true);
+  }
 });
 
 /***/ }),
@@ -90,11 +94,8 @@ $(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export calculateSectionA */
-/* unused harmony export calculateSectionB */
-/* unused harmony export calculateSectionC */
-/* unused harmony export calculateSectionD */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return calculateAllOutputs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return calculateOnBlur; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formattedDate__ = __webpack_require__(8);
 
 
@@ -179,8 +180,6 @@ var calculateSectionD = function calculateSectionD() {
 };
 
 var calculateAllOutputs = function calculateAllOutputs() {
-  if (!document.getElementById("60co_input-1")) return;
-
   MVs.forEach(function (mv) {
     calculateSectionA(mv);
   });
@@ -189,6 +188,37 @@ var calculateAllOutputs = function calculateAllOutputs() {
   });
   calculateSectionC();
   calculateSectionD();
+};
+
+var timeoutId = void 0;
+var calculateOnBlur = function calculateOnBlur(e) {
+  var target = e.target,
+      path = e.path;
+
+  var targetId = target.id;
+  // path = [input, ..., section-X, ..., html, document, window];
+  var sectionId = path[path.length - 9].id;
+
+  if (timeoutId) clearTimeout(timeoutId);
+
+  timeoutId = setTimeout(function () {
+    switch (sectionId) {
+      case "section-a":
+        calculateSectionA(targetId.substr(0, targetId.indexOf("mv_")));
+        break;
+      case "section-b":
+        calculateSectionB(targetId.substr(0, targetId.indexOf("mev_")));
+        break;
+      case "section-c":
+        calculateSectionC();
+        break;
+      case "section-d":
+        calculateSectionD();
+        break;
+      default:
+        break;
+    }
+  }, 500);
 };
 
 /***/ }),

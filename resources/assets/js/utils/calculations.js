@@ -5,7 +5,7 @@ import formattedDate from "./formattedDate";
 const MVs = ["4", "6", "10", "15"];
 const MeVs = ["6", "9", "12", "16"];
 
-export const calculateSectionA = mv => {
+const calculateSectionA = mv => {
   const d20d10 = +document.getElementById(`${mv}mv_d20-d10`).value;
   const input1 = +document.getElementById(`${mv}mv_input-1`).value;
   const input2 = +document.getElementById(`${mv}mv_input-2`).value;
@@ -26,7 +26,7 @@ export const calculateSectionA = mv => {
   result.value = tmp;
 };
 
-export const calculateSectionB = mev => {
+const calculateSectionB = mev => {
   const r50 = +document.getElementById(`${mev}mev_r50`).value;
   const input1 = +document.getElementById(`${mev}mev_input-1`).value;
   const input2 = +document.getElementById(`${mev}mev_input-2`).value;
@@ -44,7 +44,7 @@ export const calculateSectionB = mev => {
   result.value = tmp;
 };
 
-export const calculateSectionC = () => {
+const calculateSectionC = () => {
   const inputs = {
     mmHg: +document.getElementById("input-mmHg").value,
     mbar: +document.getElementById("input-mbar").value
@@ -58,7 +58,7 @@ export const calculateSectionC = () => {
   outputs.mmHg.value = inputs.mbar / 1.333224;
 };
 
-export const calculateSectionD = () => {
+const calculateSectionD = () => {
   let input1 = document.getElementById("60co_input-1").value;
   const input2 = +document.getElementById("60co_input-2").value;
   let input3 = document.getElementById("60co_input-3").value;
@@ -81,8 +81,6 @@ export const calculateSectionD = () => {
 };
 
 export const calculateAllOutputs = () => {
-  if (!document.getElementById("60co_input-1")) return;
-
   MVs.forEach(mv => {
     calculateSectionA(mv);
   });
@@ -91,4 +89,33 @@ export const calculateAllOutputs = () => {
   });
   calculateSectionC();
   calculateSectionD();
+};
+
+let timeoutId;
+export const calculateOnBlur = e => {
+  const { target, path } = e;
+  const targetId = target.id;
+  // path = [input, ..., section-X, ..., html, document, window];
+  const sectionId = path[path.length - 9].id;
+
+  if (timeoutId) clearTimeout(timeoutId);
+
+  timeoutId = setTimeout(() => {
+    switch (sectionId) {
+      case "section-a":
+        calculateSectionA(targetId.substr(0, targetId.indexOf("mv_")));
+        break;
+      case "section-b":
+        calculateSectionB(targetId.substr(0, targetId.indexOf("mev_")));
+        break;
+      case "section-c":
+        calculateSectionC();
+        break;
+      case "section-d":
+        calculateSectionD();
+        break;
+      default:
+        break;
+    }
+  }, 500);
 };
