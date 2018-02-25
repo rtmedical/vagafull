@@ -20,20 +20,20 @@
           <tr>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-1" type="date" class="input_data_color">
+                <input id="60co_input-1" type="date" class="validate input_data_color">
               </div>
             </td>
             <td>
               <div class="input-field inline">
                 <input id="60co_input-2" type="number" 
-                  class="output_data_color" placeholder="Insira dado...">
+                  class="validate output_data_color" placeholder="Insira dado...">
               </div>
             </td>
           </tr>
           <tr>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-3" type="date" class="input_data_color">
+                <input id="60co_input-3" type="date" class="validate input_data_color">
               </div>
             </td>
             <td>
