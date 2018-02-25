@@ -1,3 +1,6 @@
+import { calculateAllOutputs } from "./utils/calculations";
+
 $(() => {
-    $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav();
+  calculateAllOutputs();
 });

@@ -25,7 +25,8 @@
             </td>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-2" type="number" value="0.00" class="output_data_color">
+                <input id="60co_input-2" type="number" 
+                  class="output_data_color" placeholder="Insira dado...">
               </div>
             </td>
           </tr>
@@ -37,19 +38,19 @@
             </td>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-4" type="number" disabled value="0.00" class="output_data_color">
+                <input id="60co_output-1" type="number" class="output_data_color" disabled>
               </div>
             </td>
           </tr>
           <tr>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-5" type="date" disabled class="input_data_color">
+                <input id="60co_output-2" type="date" class="input_data_color" disabled>
               </div>
             </td>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-6" type="number" disabled value="0.00" class="output_data_color">
+                <input id="60co_output-3" type="number" class="output_data_color" disabled>
               </div>
             </td>
           </tr>
