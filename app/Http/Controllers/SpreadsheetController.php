@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Spreadsheet;
+use App\Models\IndiceTPR2010;
+use App\Models\IndiceR50;
 use Illuminate\Http\Request;
 
 class SpreadsheetController extends Controller
@@ -15,7 +17,7 @@ class SpreadsheetController extends Controller
     public function index()
     {
         $spreadsheets = Spreadsheet::all();
-        return view('spreadsheets.index',compact('spreadsheets',$spreadsheets));
+        return view('spreadsheets.index',compact('spreadsheets'));
     }
 
     /**
@@ -25,7 +27,9 @@ class SpreadsheetController extends Controller
      */
     public function create()
     {
-        //
+        $mvs = IndiceTPR2010::getMVs();
+        $mevs = IndiceR50::getMeVs();
+        return view('spreadsheets.create', compact('mvs', 'mevs'));
     }
 
     /**
