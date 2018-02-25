@@ -85,7 +85,17 @@ $(function () {
 
   if (document.getElementById("60co_input-1")) {
     Object(__WEBPACK_IMPORTED_MODULE_0__utils_calculations__["a" /* calculateAllOutputs */])();
-    document.querySelector("form").addEventListener("blur", __WEBPACK_IMPORTED_MODULE_0__utils_calculations__["b" /* calculateOnBlur */], true);
+    var form = document.querySelector("form");
+    form.addEventListener("blur", __WEBPACK_IMPORTED_MODULE_0__utils_calculations__["b" /* calculateOnBlur */], true);
+    // prevent onSubmit on Enter
+    form.addEventListener("keypress", function (e) {
+      if (e.key === "Enter" || e.keyCode === 13) {
+        if (e.target.type !== "submit") {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }
+    }, true);
   }
 });
 
