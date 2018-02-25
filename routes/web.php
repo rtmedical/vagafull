@@ -16,7 +16,3 @@ Route::get('/', function () {
 });
 
 Route::resource('spreadsheets', 'SpreadsheetController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
