@@ -21,9 +21,9 @@
   color: $color !important;
   font-weight: 500;
 
-  @include not('.browser-default', '.invalid', '.valid', ':focus'){ 
-    border-bottom: 1px solid $color;
-    box-shadow: 0 1px 0 0 $color;
+  @include not('.browser-default', '.invalid', ':focus'){ 
+    border-bottom: 1px solid $color !important;
+    box-shadow: 0 1px 0 0 $color !important;
   }
   &+label {
     color: $color !important;

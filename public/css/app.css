@@ -36,10 +36,10 @@ input.input_data_color {
   font-weight: 500;
 }
 
-input.input_data_color:not(.browser-default):not(.invalid):not(.valid):not(:focus) {
-  border-bottom: 1px solid #ffab00;
-  -webkit-box-shadow: 0 1px 0 0 #ffab00;
-          box-shadow: 0 1px 0 0 #ffab00;
+input.input_data_color:not(.browser-default):not(.invalid):not(:focus) {
+  border-bottom: 1px solid #ffab00 !important;
+  -webkit-box-shadow: 0 1px 0 0 #ffab00 !important;
+          box-shadow: 0 1px 0 0 #ffab00 !important;
 }
 
 input.input_data_color + label {
@@ -52,10 +52,10 @@ input.experimental_data_color {
   font-weight: 500;
 }
 
-input.experimental_data_color:not(.browser-default):not(.invalid):not(.valid):not(:focus) {
-  border-bottom: 1px solid #e040fb;
-  -webkit-box-shadow: 0 1px 0 0 #e040fb;
-          box-shadow: 0 1px 0 0 #e040fb;
+input.experimental_data_color:not(.browser-default):not(.invalid):not(:focus) {
+  border-bottom: 1px solid #e040fb !important;
+  -webkit-box-shadow: 0 1px 0 0 #e040fb !important;
+          box-shadow: 0 1px 0 0 #e040fb !important;
 }
 
 input.experimental_data_color + label {
@@ -68,10 +68,10 @@ input.output_data_color {
   font-weight: 500;
 }
 
-input.output_data_color:not(.browser-default):not(.invalid):not(.valid):not(:focus) {
-  border-bottom: 1px solid #43a047;
-  -webkit-box-shadow: 0 1px 0 0 #43a047;
-          box-shadow: 0 1px 0 0 #43a047;
+input.output_data_color:not(.browser-default):not(.invalid):not(:focus) {
+  border-bottom: 1px solid #43a047 !important;
+  -webkit-box-shadow: 0 1px 0 0 #43a047 !important;
+          box-shadow: 0 1px 0 0 #43a047 !important;
 }
 
 input.output_data_color + label {
@@ -84,10 +84,10 @@ input.table_data_color {
   font-weight: 500;
 }
 
-input.table_data_color:not(.browser-default):not(.invalid):not(.valid):not(:focus) {
-  border-bottom: 1px solid #01579b;
-  -webkit-box-shadow: 0 1px 0 0 #01579b;
-          box-shadow: 0 1px 0 0 #01579b;
+input.table_data_color:not(.browser-default):not(.invalid):not(:focus) {
+  border-bottom: 1px solid #01579b !important;
+  -webkit-box-shadow: 0 1px 0 0 #01579b !important;
+          box-shadow: 0 1px 0 0 #01579b !important;
 }
 
 input.table_data_color + label {
