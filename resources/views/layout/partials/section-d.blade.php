@@ -20,12 +20,13 @@
           <tr>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-1" type="date" class="validate input_data_color">
+                <input id="60co_input-1" name="60co_input-1" type="date" 
+                  class="validate input_data_color">
               </div>
             </td>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-2" type="number" 
+                <input id="60co_input-2" name="60co_input-2" type="number" 
                   class="validate output_data_color" placeholder="Insira dado...">
               </div>
             </td>
@@ -33,7 +34,8 @@
           <tr>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-3" type="date" class="validate input_data_color">
+                <input id="60co_input-3" name="60co_input-3" type="date" 
+                  class="validate input_data_color">
               </div>
             </td>
             <td>
