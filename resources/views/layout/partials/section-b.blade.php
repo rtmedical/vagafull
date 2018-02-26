@@ -9,35 +9,41 @@
             <span class="card-title center"><h5>{{$mev}} MeV</h5></span>
             <div class="row">
               <div class="input-field col s4 offset-s4">
-                <input id="{{$mev}}mev_r50" name="{{$mev}}mev_r50" type="number" 
-                  class="validate experimental_data_color" placeholder="Insira dado...">
+                <input id="{{$mev}}mev_r50" name="{{$mev}}mev_r50" 
+                  type="number" step="any" class="validate experimental_data_color" 
+                  placeholder="Insira dado...">
                 <label for="{{$mev}}mev_r50">R<sub>50</sub></label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s4">
-                <input id="{{$mev}}mev_input-1" name="{{$mev}}mev_input-1" type="number" 
-                  class="validate table_data_color" placeholder="Insira dado...">
+                <input id="{{$mev}}mev_input-1" name="{{$mev}}mev_input-1" 
+                  type="number" step="any" class="validate table_data_color" 
+                  placeholder="Insira dado...">
               </div>
               <div class="input-field col s4">
-                <input id="{{$mev}}mev_output-1" type="number" class="input_data_color" disabled>
+                <input id="{{$mev}}mev_output-1" type="number" step="any" 
+                  class="input_data_color" disabled>
               </div>
               <div class="input-field col s4">
-                <input id="{{$mev}}mev_input-2" name="{{$mev}}mev_input-2" type="number" 
-                  class="validate table_data_color" placeholder="Insira dado...">
+                <input id="{{$mev}}mev_input-2" name="{{$mev}}mev_input-2" 
+                  type="number" step="any" class="validate table_data_color" 
+                  placeholder="Insira dado...">
               </div>
             </div>
             <div class="row">
               <div class="input-field col s4">
-                <input id="{{$mev}}mev_input-3" name="{{$mev}}mev_input-3" type="number" 
-                  class="validate table_data_color" placeholder="Insira dado...">
+                <input id="{{$mev}}mev_input-3" name="{{$mev}}mev_input-3" 
+                  type="number" step="any" class="validate table_data_color" 
+                  placeholder="Insira dado...">
               </div>
               <div class="input-field col s4">
                 <input id="{{$mev}}mev_output-2" type="text" class="output_data_color" disabled>
               </div>
               <div class="input-field col s4">
-                <input id="{{$mev}}mev_input-4" name="{{$mev}}mev_input-4" type="number" 
-                  class="validate table_data_color" placeholder="Insira dado...">
+                <input id="{{$mev}}mev_input-4" name="{{$mev}}mev_input-4" 
+                  type="number" step="any" class="validate table_data_color" 
+                  placeholder="Insira dado...">
               </div>
             </div>
             <div class="row">

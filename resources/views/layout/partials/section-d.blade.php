@@ -26,7 +26,7 @@
             </td>
             <td>
               <div class="input-field inline">
-                <input id="60co_input-2" name="60co_input-2" type="number" 
+                <input id="60co_input-2" name="60co_input-2" type="number" step="any"
                   class="validate output_data_color" placeholder="Insira dado...">
               </div>
             </td>
@@ -40,7 +40,8 @@
             </td>
             <td>
               <div class="input-field inline">
-                <input id="60co_output-1" type="number" class="output_data_color" disabled>
+                <input id="60co_output-1" type="number" step="any" 
+                  class="output_data_color" disabled>
               </div>
             </td>
           </tr>
@@ -52,7 +53,8 @@
             </td>
             <td>
               <div class="input-field inline">
-                <input id="60co_output-3" type="number" class="output_data_color" disabled>
+                <input id="60co_output-3" type="number" step="any" 
+                  class="output_data_color" disabled>
               </div>
             </td>
           </tr>

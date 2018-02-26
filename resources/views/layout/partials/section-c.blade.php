@@ -7,7 +7,8 @@
         <div class="row">
           <div class="col s12">
             <div class="input-field inline">
-              <input id="input-mmHg" name="input-mmHg" type="number" class="validate" placeholder="Insira dado...">
+              <input id="input-mmHg" name="input-mmHg" type="number" step="any" 
+                class="validate" placeholder="Insira dado...">
             </div>
             mmHg
           </div>
@@ -15,7 +16,8 @@
         <div class="row">
           <div class="col s12">
             <div class="input-field inline">
-              <input id="input-mbar" name="input-mbar" type="number" class="validate" placeholder="Insira dado...">
+              <input id="input-mbar" name="input-mbar" type="number" step="any" 
+                class="validate" placeholder="Insira dado...">
             </div>
             mbar(hPa)
           </div>
@@ -25,7 +27,7 @@
         <div class="row">
           <div class="col s12">
             <div class="input-field inline">
-              <input id="output-mbar" type="number" disabled value="0.00">
+              <input id="output-mbar" type="number" step="any" disabled value="0.00">
             </div>
             mbar(hPa)
           </div>
@@ -33,7 +35,7 @@
         <div class="row">
           <div class="col s12">
             <div class="input-field inline">
-              <input id="output-mmHg" type="number" disabled value="0.00">
+              <input id="output-mmHg" type="number" step="any" disabled value="0.00">
             </div>
             mmHg
           </div>
