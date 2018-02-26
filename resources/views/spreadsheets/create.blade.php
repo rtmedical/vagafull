@@ -30,8 +30,12 @@
 
     <section id="section-e" class="section">
       <div class="row">
-        <div class="col s4 offset-s4">
-          <button type="submit" class="btn waves-effect waves-light">Enviar</button>
+        <div class="col s6 offset-s3">
+          <div class="input-field">
+            <input id="title" name="title" type="text" class="validate" required>
+            <label for="title">Título</label>
+          </div>
+          <button type="submit" class="btn waves-effect waves-light center-align">Enviar</button>
         </div>
       </div>
     </section>

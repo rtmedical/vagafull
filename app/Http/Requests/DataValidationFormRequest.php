@@ -68,7 +68,8 @@ class DataValidationFormRequest extends FormRequest
             "input-mbar" => 'nullable|numeric',
             "60co_input-1" => 'nullable|date',
             "60co_input-2" => 'nullable|numeric',
-            "60co_input-3" => 'nullable|date'
+            "60co_input-3" => 'nullable|date',
+            "title" => 'required'
         ];
     }
 }
