@@ -111,6 +111,9 @@ class SpreadsheetController extends Controller
      */
     public function destroy(Spreadsheet $spreadsheet)
     {
-        //
+        $spreadsheet->delete();
+        return redirect()
+            ->route('spreadsheets.index')
+            ->with('message', 'Successfully deleted the spreadsheet!');
     }
 }

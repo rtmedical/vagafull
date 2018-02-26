@@ -2,7 +2,7 @@
 
 @section('content')
   @if (Session::has('message'))
-    <div class="card-panel red">
+    <div class="card-panel green">
       <span class="white-text">{{ Session::get('message') }}</span>
     </div>
   @endif
