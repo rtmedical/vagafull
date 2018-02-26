@@ -11,6 +11,8 @@
 @endsection
 
 @section('content')
+  @include('layout.partials.form-errors')
+  
   <form action="{{ route('spreadsheets.store') }}" method="POST">
     {{ csrf_field() }}
 
