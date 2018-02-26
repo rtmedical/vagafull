@@ -325,6 +325,7 @@ class ComposerStaticInitcc862bb8e71fb34f722d8227f56cec67
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\DataValidationFormRequest' => __DIR__ . '/../..' . '/app/Http/Requests/DataValidationFormRequest.php',
         'App\\Models\\ConversaoUnidPressao' => __DIR__ . '/../..' . '/app/Models/ConversaoUnidPressao.php',
         'App\\Models\\Decaimento60Co' => __DIR__ . '/../..' . '/app/Models/Decaimento60Co.php',
         'App\\Models\\IndiceR50' => __DIR__ . '/../..' . '/app/Models/IndiceR50.php',
