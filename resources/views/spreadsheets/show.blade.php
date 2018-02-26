@@ -28,14 +28,14 @@
     <div class="row">
       <div class="col s6 offset-s3">
         <div class="btn-group">
-          <a class="btn waves-effect waves-light" 
+          <a class="btn waves-effect waves-light blue" 
               href="{{ route('spreadsheets.edit', [$spreadsheet->id]) }}">
             Editar
           </a>&nbsp;
           <form action="{{ route('spreadsheets.destroy', [$spreadsheet->id]) }}" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <button type="submit" class="btn waves-effect waves-light">Deletar</button>
+            <button type="submit" class="btn waves-effect waves-light red">Deletar</button>
           </form>
         </div>
       </div>

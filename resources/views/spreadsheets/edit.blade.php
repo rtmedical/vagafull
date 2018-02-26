@@ -34,7 +34,7 @@
             >
             <label for="title">Título</label>
           </div>
-          <button type="submit" class="btn waves-effect waves-light center-align">Salvar</button>
+          <button type="submit" class="btn waves-effect waves-light green">Salvar</button>
         </div>
       </div>
     </section>

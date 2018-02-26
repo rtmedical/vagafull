@@ -29,7 +29,7 @@
             <input id="title" name="title" type="text" class="validate" required>
             <label for="title">Título</label>
           </div>
-          <button type="submit" class="btn waves-effect waves-light center-align">Enviar</button>
+          <button type="submit" class="btn waves-effect waves-light green">Enviar</button>
         </div>
       </div>
     </section>
