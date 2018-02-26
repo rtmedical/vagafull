@@ -15,9 +15,9 @@ class CreateDecaimentos60CoTable extends Migration
     {
         Schema::create('decaimentos_60co', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('input_1');
-            $table->double('input_2', 10, 3)->default(0);
-            $table->date('input_3');
+            $table->date('input_1')->nullable();
+            $table->double('input_2', 10, 3)->nullable();
+            $table->date('input_3')->nullable();
             $table->integer('spreadsheet_id')->unsigned();
             $table->foreign('spreadsheet_id')
                 ->references('id')
