@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Decaimento60Co extends Model
 {
     protected $table = 'decaimentos_60co';
-    public $timestramps = false;
+    public $timestamps = false;
+    protected $fillable = [
+        'mmhg', 
+        'mbar', 
+        'spreadsheet_id'
+    ];
 }

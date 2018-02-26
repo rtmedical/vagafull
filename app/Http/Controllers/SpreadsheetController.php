@@ -6,6 +6,7 @@ use App\Models\Spreadsheet;
 use App\Models\IndiceTPR2010;
 use App\Models\IndiceR50;
 use Illuminate\Http\Request;
+use App\Http\Requests\DataValidationFormRequest;
 
 class SpreadsheetController extends Controller
 {
@@ -38,9 +39,16 @@ class SpreadsheetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DataValidationFormRequest $request, Spreadsheet $spreadsheet)
     {
-        //
+        $result = $spreadsheet->saveData($request->all());
+        if ($result['success'])
+            return redirect()->route('spreadsheets.show', [$result['data']]);
+        else
+        {
+            return back()
+                ->withErrors([$result['message']]);    
+        }
     }
 
     /**
