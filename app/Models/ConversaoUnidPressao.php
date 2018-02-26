@@ -9,9 +9,8 @@ class ConversaoUnidPressao extends Model
     protected $table = 'conversoes_unid_pressao';
     public $timestamps = false;
     protected $fillable = [
-        'input_1', 
-        'input_2', 
-        'input_3', 
+        'mmhg', 
+        'mbar', 
         'spreadsheet_id'
     ];
 }
