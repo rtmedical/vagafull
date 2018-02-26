@@ -48,7 +48,8 @@ class SpreadsheetController extends Controller
         else
         {
             return back()
-                ->withErrors([$result['message']]);    
+                ->withInput()
+                ->withErrors([$result['message']]);
         }
     }
 
@@ -99,6 +100,7 @@ class SpreadsheetController extends Controller
         else
         {
             return back()
+                ->withInput()
                 ->withErrors([$result['message']]);
         }
     }

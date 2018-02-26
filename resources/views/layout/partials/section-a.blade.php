@@ -12,8 +12,9 @@
                 <input id="{{$mv}}mv_d20-d10" name="{{$mv}}mv_d20-d10" 
                   type="number" step="any" class="validate experimental_data_color" 
                   placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}" 
-                  value="{{ isset($spreadsheet) ? 
-                    $spreadsheet->indices_tpr2010[$loop->index]->d20_d10 : '' }}"
+                  value="{{ !!old($mv.'mv_d20-d10') ? old($mv.'mv_d20-d10') :
+                    (isset($spreadsheet) ? 
+                      $spreadsheet->indices_tpr2010[$loop->index]->d20_d10 : '') }}"
                   {{ $mode === 'show' ? 'disabled' : '' }}
                 >
                 <label for="{{$mv}}mv_d20-d10">D<sub>20</sub>/D<sub>10</sub></label>
@@ -30,8 +31,9 @@
                 <input id="{{$mv}}mv_input-1" name="{{$mv}}mv_input-1" 
                   type="number" step="any" class="validate table_data_color" 
                   placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
-                  value="{{ isset($spreadsheet) ? 
-                    $spreadsheet->indices_tpr2010[$loop->index]->input_1 : '' }}"
+                  value="{{ !!old($mv.'mv_input-1') ? old($mv.'mv_input-1') :
+                    (isset($spreadsheet) ? 
+                      $spreadsheet->indices_tpr2010[$loop->index]->input_1 : '') }}"
                   {{ $mode === 'show' ? 'disabled' : '' }}
                 >
               </div>
@@ -44,8 +46,9 @@
                 <input id="{{$mv}}mv_input-2" name="{{$mv}}mv_input-2" 
                   type="number" step="any" class="validate table_data_color" 
                   placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
-                  value="{{ isset($spreadsheet) ? 
-                    $spreadsheet->indices_tpr2010[$loop->index]->input_2 : '' }}"
+                  value="{{ !!old($mv.'mv_input-2') ? old($mv.'mv_input-2') :
+                    (isset($spreadsheet) ? 
+                      $spreadsheet->indices_tpr2010[$loop->index]->input_2 : '') }}"
                   {{ $mode === 'show' ? 'disabled' : '' }}
                 >
               </div>
@@ -55,8 +58,9 @@
                 <input id="{{$mv}}mv_input-3" name="{{$mv}}mv_input-3" 
                   type="number" step="any" class="validate table_data_color" 
                   placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
-                  value="{{ isset($spreadsheet) ? 
-                    $spreadsheet->indices_tpr2010[$loop->index]->input_3 : '' }}"
+                  value="{{ !!old($mv.'mv_input-3') ? old($mv.'mv_input-3') :
+                    (isset($spreadsheet) ? 
+                      $spreadsheet->indices_tpr2010[$loop->index]->input_3 : '') }}"
                   {{ $mode === 'show' ? 'disabled' : '' }}
                 >
               </div>
@@ -67,8 +71,9 @@
                 <input id="{{$mv}}mv_input-4" name="{{$mv}}mv_input-4" 
                   type="number" step="any" class="validate table_data_color" 
                   placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
-                  value="{{ isset($spreadsheet) ? 
-                    $spreadsheet->indices_tpr2010[$loop->index]->input_4 : '' }}"
+                  value="{{ !!old($mv.'mv_input-4') ? old($mv.'mv_input-4') :
+                    (isset($spreadsheet) ? 
+                      $spreadsheet->indices_tpr2010[$loop->index]->input_4 : '') }}"
                   {{ $mode === 'show' ? 'disabled' : '' }}
                 >
               </div>

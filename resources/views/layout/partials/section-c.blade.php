@@ -9,8 +9,9 @@
             <div class="input-field inline">
               <input id="input-mmHg" name="input-mmHg" type="number" step="any" class="validate"
                 placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
-                value="{{ isset($spreadsheet) ? 
-                  $spreadsheet->conversao_unid_pressao->mmhg : '' }}"
+                value="{{ !!old('input-mmHg') ? old('input-mmHg') :
+                  (isset($spreadsheet) ? 
+                    $spreadsheet->conversao_unid_pressao->mmhg : '') }}"
                 {{ $mode === 'show' ? 'disabled' : '' }}
               >
             </div>
@@ -22,8 +23,9 @@
             <div class="input-field inline">
               <input id="input-mbar" name="input-mbar" type="number" step="any" class="validate" 
                 placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
-                value="{{ isset($spreadsheet) ? 
-                  $spreadsheet->conversao_unid_pressao->mbar : '' }}"
+                value="{{ !!old('input-mbar') ? old('input-mbar') :
+                  (isset($spreadsheet) ? 
+                    $spreadsheet->conversao_unid_pressao->mbar : '') }}"
                 {{ $mode === 'show' ? 'disabled' : '' }}
               >
             </div>
