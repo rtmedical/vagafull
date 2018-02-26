@@ -28,9 +28,10 @@ class SpreadsheetController extends Controller
      */
     public function create()
     {
+        $mode = 'create';
         $mvs = IndiceTPR2010::getMVs();
         $mevs = IndiceR50::getMeVs();
-        return view('spreadsheets.create', compact('mvs', 'mevs'));
+        return view('spreadsheets.create', compact('mode', 'mvs', 'mevs'));
     }
 
     /**
@@ -59,7 +60,10 @@ class SpreadsheetController extends Controller
      */
     public function show(Spreadsheet $spreadsheet)
     {
-        //
+        $mode = 'show';
+        $mvs = IndiceTPR2010::getMVs();
+        $mevs = IndiceR50::getMeVs();
+        return view('spreadsheets.show', compact('mode', 'mvs', 'mevs', 'spreadsheet'));
     }
 
     /**

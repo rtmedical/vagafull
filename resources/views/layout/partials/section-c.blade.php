@@ -7,8 +7,12 @@
         <div class="row">
           <div class="col s12">
             <div class="input-field inline">
-              <input id="input-mmHg" name="input-mmHg" type="number" step="any" 
-                class="validate" placeholder="Insira dado...">
+              <input id="input-mmHg" name="input-mmHg" type="number" step="any" class="validate"
+                placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
+                value="{{ isset($spreadsheet) ? 
+                  $spreadsheet->conversao_unid_pressao->mmhg : '' }}"
+                {{ $mode === 'show' ? 'disabled' : '' }}
+              >
             </div>
             mmHg
           </div>
@@ -16,8 +20,12 @@
         <div class="row">
           <div class="col s12">
             <div class="input-field inline">
-              <input id="input-mbar" name="input-mbar" type="number" step="any" 
-                class="validate" placeholder="Insira dado...">
+              <input id="input-mbar" name="input-mbar" type="number" step="any" class="validate" 
+                placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
+                value="{{ isset($spreadsheet) ? 
+                  $spreadsheet->conversao_unid_pressao->mbar : '' }}"
+                {{ $mode === 'show' ? 'disabled' : '' }}
+              >
             </div>
             mbar(hPa)
           </div>

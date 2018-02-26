@@ -21,13 +21,22 @@
             <td>
               <div class="input-field inline">
                 <input id="60co_input-1" name="60co_input-1" type="date" 
-                  class="validate input_data_color">
+                  class="validate input_data_color"
+                  value="{{ isset($spreadsheet) ? 
+                    $spreadsheet->decaimento_60Co->input_1 : '' }}"
+                  {{ $mode === 'show' ? 'disabled' : '' }}
+                >
               </div>
             </td>
             <td>
               <div class="input-field inline">
                 <input id="60co_input-2" name="60co_input-2" type="number" step="any"
-                  class="validate output_data_color" placeholder="Insira dado...">
+                  class="validate output_data_color"
+                  placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}" 
+                  value="{{ isset($spreadsheet) ? 
+                    $spreadsheet->decaimento_60Co->input_2 : '' }}"
+                  {{ $mode === 'show' ? 'disabled' : '' }}
+                >
               </div>
             </td>
           </tr>
@@ -35,7 +44,11 @@
             <td>
               <div class="input-field inline">
                 <input id="60co_input-3" name="60co_input-3" type="date" 
-                  class="validate input_data_color">
+                  class="validate input_data_color"
+                  value="{{ isset($spreadsheet) ? 
+                    $spreadsheet->decaimento_60Co->input_3 : '' }}"
+                  {{ $mode === 'show' ? 'disabled' : '' }}
+                >
               </div>
             </td>
             <td>
