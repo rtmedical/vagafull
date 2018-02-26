@@ -14,4 +14,11 @@ class Decaimento60Co extends Model
         'input_3', 
         'spreadsheet_id'
     ];
+
+    public function updateData($data)
+    {
+        $this->input_1 = $data['input_1'];
+        $this->input_2 = $data['input_2'];
+        $this->input_3 = $data['input_3'];
+    }
 }

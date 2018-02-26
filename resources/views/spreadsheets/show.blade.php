@@ -6,6 +6,12 @@
 @endsection
 
 @section('content')
+  @if (Session::has('message'))
+    <div class="card-panel green">
+      <span class="white-text">{{ Session::get('message') }}</span>
+    </div>
+  @endif
+
   @include('layout.partials.section-a')
   <div class="divider"></div>
 

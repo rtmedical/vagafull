@@ -23,4 +23,13 @@ class IndiceR50 extends Model
     public static function getMeVs() {
         return self::$MeV;
     }
+
+    public function updateData($data)
+    {
+        $this->r50 = $data['r50'];
+        $this->input_1 = $data['input_1'];
+        $this->input_2 = $data['input_2'];
+        $this->input_3 = $data['input_3'];
+        $this->input_4 = $data['input_4'];
+    }
 }

@@ -23,4 +23,13 @@ class IndiceTPR2010 extends Model
     public static function getMVs() {
         return self::$MV;
     }
+
+    public function updateData($data)
+    {
+        $this->d20_d10 = $data['d20_d10'];
+        $this->input_1 = $data['input_1'];
+        $this->input_2 = $data['input_2'];
+        $this->input_3 = $data['input_3'];
+        $this->input_4 = $data['input_4'];
+    }
 }

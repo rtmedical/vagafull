@@ -74,7 +74,10 @@ class SpreadsheetController extends Controller
      */
     public function edit(Spreadsheet $spreadsheet)
     {
-        //
+        $mode = 'edit';
+        $mvs = IndiceTPR2010::getMVs();
+        $mevs = IndiceR50::getMeVs();
+        return view('spreadsheets.edit', compact('mode', 'mvs', 'mevs', 'spreadsheet'));
     }
 
     /**
@@ -86,7 +89,18 @@ class SpreadsheetController extends Controller
      */
     public function update(Request $request, Spreadsheet $spreadsheet)
     {
-        //
+        $result = $spreadsheet->updateData($request->all(), $spreadsheet);
+        if ($result['success'])
+        {
+            return redirect()
+                ->route('spreadsheets.show', [$result['data']])
+                ->with('message', 'Successfully modified the spreadsheet!');
+        }
+        else
+        {
+            return back()
+                ->withErrors([$result['message']]);
+        }
     }
 
     /**

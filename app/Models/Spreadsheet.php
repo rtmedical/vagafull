@@ -126,4 +126,78 @@ class Spreadsheet extends Model
             ];
         }
     }
+
+    public function updateData($data, $spreadsheet) 
+    {
+        DB::beginTransaction();
+
+        $spreadsheet->title = $data['title'];
+        
+        $mvs = IndiceTPR2010::getMVs();
+        foreach($mvs as $idx=>$mv) 
+        {
+            $spreadsheet->indices_tpr2010[$idx]->updateData([
+                'd20_d10' => $data[$mv.'mv_d20-d10'],
+                'input_1' => $data[$mv.'mv_input-1'],
+                'input_2' => $data[$mv.'mv_input-2'],
+                'input_3' => $data[$mv.'mv_input-3'],
+                'input_4' => $data[$mv.'mv_input-4']
+            ]);
+        }
+
+        $mevs = IndiceR50::getMeVs();
+        foreach($mevs as $idx=>$mev) 
+        {
+            $spreadsheet->indices_r50[$idx]->updateData([
+                'r50' => $data[$mev.'mev_r50'],
+                'input_1' => $data[$mev.'mev_input-1'],
+                'input_2' => $data[$mev.'mev_input-2'],
+                'input_3' => $data[$mev.'mev_input-3'],
+                'input_4' => $data[$mev.'mev_input-4']
+            ]);
+        }
+
+        $spreadsheet->conversao_unid_pressao->updateData([
+            'mmhg' => $data['input-mmHg'],
+            'mbar' => $data['input-mbar']
+        ]);
+
+        $spreadsheet->decaimento_60Co->updateData([
+            'input_1' => $data['60co_input-1'],
+            'input_2' => $data['60co_input-2'],
+            'input_3' => $data['60co_input-3']
+        ]);
+
+        try
+        {
+            $spreadsheet->save();
+            $spreadsheet->indices_tpr2010()
+                ->saveMany($spreadsheet->indices_tpr2010);
+            $spreadsheet->indices_r50()
+                ->saveMany($spreadsheet->indices_r50);
+            $spreadsheet->conversao_unid_pressao->save();
+            $spreadsheet->decaimento_60Co->save();
+        }
+        catch(QueryException $e)
+        {   
+            DB::rollBack();
+            if($e->getCode() == '23000')
+            {
+                return [
+                    'success' => false,
+                    'message' => 'The title must be unique.'
+                ];
+            }
+            return [
+                'success' => false,
+                'message' => 'Something went wrong while saving the data. Please, try again later.'
+            ];
+        }
+
+        DB::commit();
+        return [
+            'success' => true,
+            'data' => $spreadsheet->id
+        ];
+    }
 }

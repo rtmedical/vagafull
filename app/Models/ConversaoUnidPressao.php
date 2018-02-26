@@ -13,4 +13,10 @@ class ConversaoUnidPressao extends Model
         'mbar', 
         'spreadsheet_id'
     ];
+
+    public function updateData($data)
+    {
+        $this->mmhg = $data['mmhg'];
+        $this->mbar = $data['mbar'];
+    }
 }
