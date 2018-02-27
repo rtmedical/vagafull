@@ -44,7 +44,8 @@ class SpreadsheetController extends Controller
     {
         $result = Spreadsheet::saveData($request->all());
         if ($result['success'])
-            return redirect()->route('spreadsheets.show', [$result['data']]);
+            return redirect()->route('spreadsheets.show', [$result['data']])
+                ->with('message', __('spreadsheet.created'));
         else
         {
             return back()
