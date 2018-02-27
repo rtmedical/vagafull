@@ -15,13 +15,14 @@ const calculateSectionA = mv => {
   const tpr2010 = document.getElementById(`${mv}mv_tpr_20-10`);
   const output1 = document.getElementById(`${mv}mv_output-1`);
   const output2 = document.getElementById(`${mv}mv_output-2`);
-  const result = document.getElementById(`${mv}mv_result`);
+  const result = document.getElementById(`${mv}mv_k_q-q0`);
 
   let tmp = 1.2661 * d20d10 - 0.0595;
   tpr2010.value = tmp;
   output1.value = tmp;
 
   tmp = (tmp - input2) / (input1 - input2) * (input3 - input4) + input4;
+  if (!Number.isFinite(tmp) || Number.isNaN(tmp)) tmp = "";
   output2.value = tmp;
   result.value = tmp;
 };
@@ -35,11 +36,12 @@ const calculateSectionB = mev => {
 
   const output1 = document.getElementById(`${mev}mev_output-1`);
   const output2 = document.getElementById(`${mev}mev_output-2`);
-  const result = document.getElementById(`${mev}mev_result`);
+  const result = document.getElementById(`${mev}mev_k_q-qint`);
 
   output1.value = r50;
 
-  const tmp = (r50 - input2) / (input1 - input2) * (input3 - input4) + input4;
+  let tmp = (r50 - input2) / (input1 - input2) * (input3 - input4) + input4;
+  if (!Number.isFinite(tmp) || Number.isNaN(tmp)) tmp = "";
   output2.value = tmp;
   result.value = tmp;
 };

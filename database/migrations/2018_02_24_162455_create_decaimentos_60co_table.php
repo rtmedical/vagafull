@@ -18,6 +18,9 @@ class CreateDecaimentos60CoTable extends Migration
             $table->date('input_1')->nullable();
             $table->double('input_2', 10, 3)->nullable();
             $table->date('input_3')->nullable();
+            $table->double('output_1', 10, 3)->nullable();
+            $table->date('output_2')->nullable();
+            $table->double('output_3', 10, 3)->nullable();
             $table->integer('spreadsheet_id')->unsigned();
             $table->foreign('spreadsheet_id')
                 ->references('id')

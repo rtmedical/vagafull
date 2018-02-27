@@ -9,14 +9,18 @@ class ConversaoUnidPressao extends Model
     protected $table = 'conversoes_unid_pressao';
     public $timestamps = false;
     protected $fillable = [
-        'mmhg', 
-        'mbar', 
+        'input_mmhg', 
+        'input_mbar', 
+        'output_mbar', 
+        'output_mmhg', 
         'spreadsheet_id'
     ];
 
     public function updateData($data)
     {
-        $this->mmhg = $data['mmhg'];
-        $this->mbar = $data['mbar'];
+        $this->input_mmhg = $data['input_mmhg'];
+        $this->input_mbar = $data['input_mbar'];
+        $this->output_mbar = $data['output_mbar'];
+        $this->output_mmhg = $data['output_mmhg'];
     }
 }

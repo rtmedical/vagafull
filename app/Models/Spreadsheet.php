@@ -73,10 +73,12 @@ class Spreadsheet extends Model
             $result = IndiceTPR2010::create([
                 'mv' => $mv,
                 'd20_d10' => $data[$mv.'mv_d20-d10'],
+                'tpr_2010' => $data[$mv.'mv_tpr_20-10'],
                 'input_1' => $data[$mv.'mv_input-1'],
                 'input_2' => $data[$mv.'mv_input-2'],
                 'input_3' => $data[$mv.'mv_input-3'],
                 'input_4' => $data[$mv.'mv_input-4'],
+                'k_qq0' => $data[$mv.'mv_k_q-q0'],
                 'spreadsheet_id' => $spreadsheet->id
             ]);
             $OK = $OK && !!$result;
@@ -92,14 +94,17 @@ class Spreadsheet extends Model
                 'input_2' => $data[$mev.'mev_input-2'],
                 'input_3' => $data[$mev.'mev_input-3'],
                 'input_4' => $data[$mev.'mev_input-4'],
+                'k_qqint' => $data[$mev.'mev_k_q-qint'],
                 'spreadsheet_id' => $spreadsheet->id
             ]);
             $OK = $OK && !!$result;
         }
 
         $result = ConversaoUnidPressao::create([
-            'mmhg' => $data['input-mmHg'],
-            'mbar' => $data['input-mbar'],
+            'input_mmhg' => $data['input-mmHg'],
+            'input_mbar' => $data['input-mbar'],
+            'output_mbar' => $data['output-mbar'],
+            'output_mmhg' => $data['output-mmHg'],
             'spreadsheet_id' => $spreadsheet->id
         ]);
         $OK = $OK && !!$result;
@@ -108,6 +113,9 @@ class Spreadsheet extends Model
             'input_1' => $data['60co_input-1'],
             'input_2' => $data['60co_input-2'],
             'input_3' => $data['60co_input-3'],
+            'output_1' => $data['60co_output-1'],
+            'output_2' => $data['60co_output-2'],
+            'output_3' => $data['60co_output-3'],
             'spreadsheet_id' => $spreadsheet->id
         ]);
         $OK = $OK && !!$result;
@@ -141,10 +149,12 @@ class Spreadsheet extends Model
         {
             $spreadsheet->indices_tpr2010[$idx]->updateData([
                 'd20_d10' => $data[$mv.'mv_d20-d10'],
+                'tpr_2010' => $data[$mv.'mv_tpr_20-10'],
                 'input_1' => $data[$mv.'mv_input-1'],
                 'input_2' => $data[$mv.'mv_input-2'],
                 'input_3' => $data[$mv.'mv_input-3'],
-                'input_4' => $data[$mv.'mv_input-4']
+                'input_4' => $data[$mv.'mv_input-4'],
+                'k_qq0' => $data[$mv.'mv_k_q-q0']
             ]);
         }
 
@@ -156,19 +166,25 @@ class Spreadsheet extends Model
                 'input_1' => $data[$mev.'mev_input-1'],
                 'input_2' => $data[$mev.'mev_input-2'],
                 'input_3' => $data[$mev.'mev_input-3'],
-                'input_4' => $data[$mev.'mev_input-4']
+                'input_4' => $data[$mev.'mev_input-4'],
+                'k_qqint' => $data[$mev.'mev_k_q-qint']
             ]);
         }
 
         $spreadsheet->conversao_unid_pressao->updateData([
-            'mmhg' => $data['input-mmHg'],
-            'mbar' => $data['input-mbar']
+            'input_mmhg' => $data['input-mmHg'],
+            'input_mbar' => $data['input-mbar'],
+            'output_mbar' => $data['output-mbar'],
+            'output_mmhg' => $data['output-mmHg']
         ]);
 
         $spreadsheet->decaimento_60Co->updateData([
             'input_1' => $data['60co_input-1'],
             'input_2' => $data['60co_input-2'],
-            'input_3' => $data['60co_input-3']
+            'input_3' => $data['60co_input-3'],
+            'output_1' => $data['60co_output-1'],
+            'output_2' => $data['60co_output-2'],
+            'output_3' => $data['60co_output-3']
         ]);
 
         try

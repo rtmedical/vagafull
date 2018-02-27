@@ -15,6 +15,7 @@ class IndiceR50 extends Model
         'input_2', 
         'input_3', 
         'input_4', 
+        'k_qqint',
         'spreadsheet_id'
     ];
 
@@ -31,5 +32,6 @@ class IndiceR50 extends Model
         $this->input_2 = $data['input_2'];
         $this->input_3 = $data['input_3'];
         $this->input_4 = $data['input_4'];
+        $this->k_qqint = $data['k_qqint'];
     }
 }

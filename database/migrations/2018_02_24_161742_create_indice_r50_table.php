@@ -23,6 +23,7 @@ class CreateIndiceR50Table extends Migration
             $table->double('input_2', 10, 3)->nullable();
             $table->double('input_3', 10, 3)->nullable();
             $table->double('input_4', 10, 3)->nullable();
+            $table->double('k_qqint', 10, 3)->nullable();
             $table->integer('spreadsheet_id')->unsigned();
             $table->foreign('spreadsheet_id')
                 ->references('id')

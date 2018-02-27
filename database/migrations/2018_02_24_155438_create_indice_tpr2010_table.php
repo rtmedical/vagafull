@@ -19,10 +19,12 @@ class CreateIndiceTPR2010Table extends Migration
             $table->increments('id');
             $table->enum('mv', IndiceTPR2010::getMVs());
             $table->double('d20_d10', 10, 3)->nullable();
+            $table->double('tpr_2010', 10, 3)->nullable();
             $table->double('input_1', 10, 3)->nullable();
             $table->double('input_2', 10, 3)->nullable();
             $table->double('input_3', 10, 3)->nullable();
             $table->double('input_4', 10, 3)->nullable();
+            $table->double('k_qq0', 10, 3)->nullable();
             $table->integer('spreadsheet_id')->unsigned();
             $table->foreign('spreadsheet_id')
                 ->references('id')

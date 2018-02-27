@@ -20,8 +20,9 @@
                 <label for="{{$mv}}mv_d20-d10">D<sub>20</sub>/D<sub>10</sub></label>
               </div>
               <div class="input-field col s6">
-                <input id="{{$mv}}mv_tpr_20-10" type="number" step="any" 
-                  class="input_data_color" disabled
+                <input id="{{$mv}}mv_tpr_20-10" name="{{$mv}}mv_tpr_20-10" 
+                  type="number" step="any" 
+                  class="input_data_color" readonly
                 >
                 <label for="{{$mv}}mv_tpr_20-10">TPR<sub>20/10</sub></label>
               </div>
@@ -82,7 +83,9 @@
               <div class="col s12 center">
                 <strong>k<sub>Q,Q0</sub> =</strong> 
                 <div class="input-field inline">
-                  <input id="{{$mv}}mv_result" type="text" class="output_data_color" disabled>
+                  <input id="{{$mv}}mv_k_q-q0" name="{{$mv}}mv_k_q-q0" 
+                    type="text" class="output_data_color" readonly
+                  >
                 </div>
               </div>
             </div>

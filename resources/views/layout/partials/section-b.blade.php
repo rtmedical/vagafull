@@ -75,7 +75,9 @@
               <div class="col s12 center">
                 <strong>k<sub>Q,Qint</sub> =</strong> 
                 <div class="input-field inline">
-                  <input id="{{$mev}}mev_result" type="text" class="output_data_color" disabled>
+                  <input id="{{$mev}}mev_k_q-qint" name="{{$mev}}mev_k_q-qint"
+                    type="text" class="output_data_color" readonly
+                  >
                 </div>
               </div>
             </div>

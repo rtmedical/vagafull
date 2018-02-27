@@ -15,8 +15,10 @@ class CreateConversoesUnidPressaoTable extends Migration
     {
         Schema::create('conversoes_unid_pressao', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('mmhg', 10, 3)->nullable();
-            $table->double('mbar', 10, 3)->nullable();
+            $table->double('input_mmhg', 10, 3)->nullable();
+            $table->double('input_mbar', 10, 3)->nullable();
+            $table->double('output_mbar', 10, 3)->nullable();
+            $table->double('output_mmhg', 10, 3)->nullable();
             $table->integer('spreadsheet_id')->unsigned();
             $table->foreign('spreadsheet_id')
                 ->references('id')

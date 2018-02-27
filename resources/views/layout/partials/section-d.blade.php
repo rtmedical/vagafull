@@ -65,8 +65,9 @@
               <div class="input-field inline tooltipped"
                 data-position="right" data-delay="50" data-tooltip="Taxa de dose na data escolhida"
               >
-                <input id="60co_output-1" type="number" step="any" 
-                  class="output_data_color" disabled>
+                <input id="60co_output-1" name="60co_output-1" 
+                  type="number" step="any" class="output_data_color" readonly
+                >
               </div>
             </td>
           </tr>
@@ -75,15 +76,18 @@
               <div class="input-field inline tooltipped"
                 data-position="left" data-delay="50" data-tooltip="Data atual"
               >
-                <input id="60co_output-2" type="date" class="input_data_color" disabled>
+                <input id="60co_output-2" name="60co_output-2" 
+                  type="date" class="input_data_color" readonly
+                >
               </div>
             </td>
             <td>
               <div class="input-field inline tooltipped"
                 data-position="right" data-delay="50" data-tooltip="Taxa de dose no dia de hoje"
               >
-                <input id="60co_output-3" type="number" step="any" 
-                  class="output_data_color" disabled>
+                <input id="60co_output-3" name="60co_output-3" 
+                  type="number" step="any" class="output_data_color" readonly
+                >
               </div>
             </td>
           </tr>

@@ -11,7 +11,7 @@
                 placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
                 value="{{ !!old('input-mmHg') ? old('input-mmHg') :
                   (isset($spreadsheet) ? 
-                    $spreadsheet->conversao_unid_pressao->mmhg : '') }}"
+                    $spreadsheet->conversao_unid_pressao->input_mmhg : '') }}"
                 {{ $mode === 'show' ? 'disabled' : '' }}
               >
             </div>
@@ -25,7 +25,7 @@
                 placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}"
                 value="{{ !!old('input-mbar') ? old('input-mbar') :
                   (isset($spreadsheet) ? 
-                    $spreadsheet->conversao_unid_pressao->mbar : '') }}"
+                    $spreadsheet->conversao_unid_pressao->input_mbar : '') }}"
                 {{ $mode === 'show' ? 'disabled' : '' }}
               >
             </div>
@@ -37,7 +37,9 @@
         <div class="row">
           <div class="col s12">
             <div class="input-field inline">
-              <input id="output-mbar" type="number" step="any" disabled value="0.00">
+              <input id="output-mbar" name="output-mbar" 
+                type="number" step="any" readonly value="0.00"
+              >
             </div>
             mbar(hPa)
           </div>
@@ -45,7 +47,9 @@
         <div class="row">
           <div class="col s12">
             <div class="input-field inline">
-              <input id="output-mmHg" type="number" step="any" disabled value="0.00">
+              <input id="output-mmHg" name="output-mmHg" 
+                type="number" step="any" readonly value="0.00"
+              >
             </div>
             mmHg
           </div>
