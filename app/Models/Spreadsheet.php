@@ -47,9 +47,12 @@ class Spreadsheet extends Model
             if($e->getCode() == '23000')
             {
                 DB::rollback();
+                $key = 'validation.attributes.title';
                 return [
                     'success' => false,
-                    'message' => 'The title must be unique.'
+                    'message' => __('validation.unique', [
+                        'attribute' => __($key) !== $key ? __($key) : 'title'
+                    ])
                 ];
             }
         }
@@ -60,7 +63,7 @@ class Spreadsheet extends Model
             DB::rollback();
             return [
                 'success' => false,
-                'message' => 'Something went wrong while saving the data. Please, try again later.'
+                'message' => __('database.unknown_fail')
             ];
         }
 
@@ -122,7 +125,7 @@ class Spreadsheet extends Model
             DB::rollback();
             return [
                 'success' => false,
-                'message' => 'Something went wrong while saving the data. Please, try again later.'
+                'message' => __('database.unknown_fail')
             ];
         }
     }
@@ -183,14 +186,17 @@ class Spreadsheet extends Model
             DB::rollBack();
             if($e->getCode() == '23000')
             {
+                $key = 'validation.attributes.title';
                 return [
                     'success' => false,
-                    'message' => 'The title must be unique.'
+                    'message' => __('validation.unique', [
+                        'attribute' => __($key) !== $key ? __($key) : 'title'
+                    ])
                 ];
             }
             return [
                 'success' => false,
-                'message' => 'Something went wrong while saving the data. Please, try again later.'
+                'message' => __('database.unknown_fail')
             ];
         }
 

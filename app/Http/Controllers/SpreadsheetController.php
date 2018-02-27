@@ -95,7 +95,7 @@ class SpreadsheetController extends Controller
         {
             return redirect()
                 ->route('spreadsheets.show', [$result['data']])
-                ->with('message', 'Successfully modified the spreadsheet!');
+                ->with('message', __('spreadsheet.modified'));
         }
         else
         {
@@ -116,6 +116,6 @@ class SpreadsheetController extends Controller
         $spreadsheet->delete();
         return redirect()
             ->route('spreadsheets.index')
-            ->with('message', 'Successfully deleted the spreadsheet!');
+            ->with('message', __('spreadsheet.deleted'));
     }
 }
