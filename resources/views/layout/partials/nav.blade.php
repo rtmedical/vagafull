@@ -2,13 +2,13 @@
   <div class="nav-wrapper container">
     <a id="logo-container" href="/spreadsheets" class="brand-logo">Planilha</a>
     <ul class="right hide-on-med-and-down">
-      <li>
+      <li class="{{ Request::path() === 'spreadsheets/create' ? 'active' : '' }}">
         <a href="/spreadsheets/create"><i class="material-icons">add_circle</i></a>
       </li>
     </ul>
     
     <ul id="nav-mobile" class="side-nav">
-      <li>
+      <li class="{{ Request::path() === 'spreadsheets/create' ? 'active' : '' }}">
         <a href="/spreadsheets/create">
           <i class="material-icons left">add_circle</i>Adicionar
         </a>
