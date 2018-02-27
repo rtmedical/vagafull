@@ -1,5 +1,7 @@
 @extends('layout.layout')
 
+@section('title', 'Planilhas')
+
 @section('content')
   @if (Session::has('message'))
     <div class="card-panel green">

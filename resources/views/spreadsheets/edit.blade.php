@@ -5,6 +5,8 @@
   @include('layout.partials.spreadsheet-header')
 @endsection
 
+@section('title', 'Planilha - edit')
+
 @section('content')
   @include('layout.partials.form-errors')
   

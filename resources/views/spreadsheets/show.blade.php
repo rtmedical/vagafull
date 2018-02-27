@@ -5,6 +5,8 @@
   @include('layout.partials.spreadsheet-header')
 @endsection
 
+@section('title', 'Planilha - show')
+
 @section('content')
   @if (Session::has('message'))
     <div class="card-panel green">
