@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+use App\Models\IndiceR50;
+
 class CreateIndiceR50Table extends Migration
 {
     /**
@@ -15,7 +17,7 @@ class CreateIndiceR50Table extends Migration
     {
         Schema::create('indices_r50', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('mev', ['6', '9', '12', '16']);
+            $table->enum('mev', IndiceR50::getMeVs());
             $table->double('r50', 10, 3)->nullable();
             $table->double('input_1', 10, 3)->nullable();
             $table->double('input_2', 10, 3)->nullable();
