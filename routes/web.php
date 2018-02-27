@@ -12,9 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('spreadsheets');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('spreadsheets', 'SpreadsheetController');

@@ -1,22 +1,38 @@
+import { calculateAllOutputs, calculateOnBlur } from "./utils/calculations";
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+$(() => {
+  $(".button-collapse").sideNav();
 
-require('./bootstrap');
+  $("#fixed-btn-up").click(() => {
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+    return false;
+  });
 
-window.Vue = require('vue');
+  $("#fixed-btn-down").click(() => {
+    $("html, body").animate({ scrollTop: $(document).height() }, "fast");
+    return false;
+  });
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+  if (document.getElementById("60co_input-1")) {
+    calculateAllOutputs();
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+    const form = document.getElementById("spreadsheet-form");
 
-const app = new Vue({
-    el: '#app'
+    if (form) {
+      form.addEventListener("blur", calculateOnBlur, true);
+      // prevent onSubmit on Enter
+      form.addEventListener(
+        "keypress",
+        e => {
+          if (e.key === "Enter" || e.keyCode === 13) {
+            if (e.target.type !== "submit") {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+          }
+        },
+        true
+      );
+    }
+  }
 });

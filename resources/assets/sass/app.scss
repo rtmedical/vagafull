@@ -1,9 +1,72 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
 @import "variables";
+@import "mixins";
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+.color-block {
+  background: black;
+  height: 18px;
+  width: 45px;
+  display: inline-block;
+  border: 1px solid black;
+
+  &.input_data_color {
+    background: $input_data_color;
+  }
+
+  &.experimental_data_color {
+    background: $experimental_data_color;
+  }
+
+  &.output_data_color {
+    background: $output_data_color;
+  }
+
+  &.table_data_color {
+    background: $table_data_color;
+  }
+}
+
+input {
+  &.input_data_color {
+    @include colorful_input($input_data_color);
+  }
+
+  &.experimental_data_color {
+    @include colorful_input($experimental_data_color);
+  }
+
+  &.output_data_color {
+    @include colorful_input($output_data_color);
+  }
+
+  &.table_data_color {
+    @include colorful_input($table_data_color);
+  }
+}
+
+#section-c {
+  .valign-wrapper {
+    min-height: 236px;
+  }
+}
+
+#section-d {
+  .valign-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 371px;
+  }
+}
+
+@media (max-width: 992px) {
+  #section-d {
+    .valign-wrapper {
+      align-items: center;
+    }
+  }
+}
