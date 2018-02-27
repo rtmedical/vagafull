@@ -15,7 +15,8 @@ $(() => {
 
   if (document.getElementById("60co_input-1")) {
     calculateAllOutputs();
-    const form = document.querySelector("form");
+
+    const form = document.getElementById("spreadsheet-form");
     form.addEventListener("blur", calculateOnBlur, true);
     // prevent onSubmit on Enter
     form.addEventListener(

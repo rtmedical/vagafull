@@ -10,7 +10,8 @@
 @section('content')
   @include('layout.partials.form-errors')
   
-  <form action="{{ route('spreadsheets.update', [$spreadsheet->id]) }}" method="POST">
+  <form id="spreadsheet-form" 
+      action="{{ route('spreadsheets.update', [$spreadsheet->id]) }}" method="POST">
     <input type="hidden" name="_method" value="PUT">
     {{ csrf_field() }}
 

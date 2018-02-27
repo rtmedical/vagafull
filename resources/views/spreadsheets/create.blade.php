@@ -9,7 +9,7 @@
 @section('content')
   @include('layout.partials.form-errors')
   
-  <form action="{{ route('spreadsheets.store') }}" method="POST">
+  <form id="spreadsheet-form" action="{{ route('spreadsheets.store') }}" method="POST">
     {{ csrf_field() }}
 
     @include('layout.partials.section-a')
