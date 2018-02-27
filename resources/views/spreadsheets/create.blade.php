@@ -29,8 +29,8 @@
         <div class="col s6 offset-s3">
           <div class="input-field">
             <input id="title" name="title" type="text" class="validate"
+              maxlength="100" required
               value="{{ old('title') }}" 
-              required
             >
             <label for="title">Título</label>
           </div>

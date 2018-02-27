@@ -32,8 +32,8 @@
         <div class="col s6 offset-s3">
           <div class="input-field">
             <input id="title" name="title" type="text" class="validate" 
-              value="{{ $spreadsheet->title }}"
-              required
+              maxlength="100" required
+              value="{{ $spreadsheet->title }}" 
             >
             <label for="title">Título</label>
           </div>
