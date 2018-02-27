@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(3);
+module.exports = __webpack_require__(4);
 
 
 /***/ }),
@@ -82,6 +82,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 $(function () {
   $(".button-collapse").sideNav();
+
+  $("#fixed-btn-up").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+    return false;
+  });
+
+  $("#fixed-btn-down").click(function () {
+    $("html, body").animate({ scrollTop: $(document).height() }, "fast");
+    return false;
+  });
 
   if (document.getElementById("60co_input-1")) {
     Object(__WEBPACK_IMPORTED_MODULE_0__utils_calculations__["a" /* calculateAllOutputs */])();
@@ -106,7 +116,7 @@ $(function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return calculateAllOutputs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return calculateOnBlur; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formattedDate__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formattedDate__ = __webpack_require__(3);
 
 
 // PS: pego do arquivo: 'app/Http/Models/IndiceTPR2010' e
@@ -233,16 +243,6 @@ var calculateOnBlur = function calculateOnBlur(e) {
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -260,6 +260,12 @@ var formattedDate = function formattedDate() {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (formattedDate);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

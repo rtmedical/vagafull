@@ -3,6 +3,16 @@ import { calculateAllOutputs, calculateOnBlur } from "./utils/calculations";
 $(() => {
   $(".button-collapse").sideNav();
 
+  $("#fixed-btn-up").click(() => {
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+    return false;
+  });
+
+  $("#fixed-btn-down").click(() => {
+    $("html, body").animate({ scrollTop: $(document).height() }, "fast");
+    return false;
+  });
+
   if (document.getElementById("60co_input-1")) {
     calculateAllOutputs();
     const form = document.querySelector("form");
