@@ -19,7 +19,9 @@
         <tbody>
           <tr>
             <td>
-              <div class="input-field inline">
+              <div class="input-field inline tooltipped" 
+                data-position="left" data-delay="50" data-tooltip="Data de referência da fonte"
+              >
                 <input id="60co_input-1" name="60co_input-1" type="date" 
                   class="validate input_data_color"
                   value="{{ !!old('60co_input-1') ? old('60co_input-1') :
@@ -30,7 +32,10 @@
               </div>
             </td>
             <td>
-              <div class="input-field inline">
+              <div class="input-field inline tooltipped"
+                data-position="right" data-delay="50" 
+                data-tooltip="Taxa de dose da fonte na data de referência"
+              >
                 <input id="60co_input-2" name="60co_input-2" type="number" step="any"
                   class="validate output_data_color"
                   placeholder="{{ $mode !== 'show' ? 'Insira dado...' : '' }}" 
@@ -44,7 +49,9 @@
           </tr>
           <tr>
             <td>
-              <div class="input-field inline">
+              <div class="input-field inline tooltipped"
+                data-position="left" data-delay="50" data-tooltip="Qualquer data que se queira"
+              >
                 <input id="60co_input-3" name="60co_input-3" type="date" 
                   class="validate input_data_color"
                   value="{{ !!old('60co_input-3') ? old('60co_input-3') :
@@ -55,7 +62,9 @@
               </div>
             </td>
             <td>
-              <div class="input-field inline">
+              <div class="input-field inline tooltipped"
+                data-position="right" data-delay="50" data-tooltip="Taxa de dose na data escolhida"
+              >
                 <input id="60co_output-1" type="number" step="any" 
                   class="output_data_color" disabled>
               </div>
@@ -63,12 +72,16 @@
           </tr>
           <tr>
             <td>
-              <div class="input-field inline">
+              <div class="input-field inline tooltipped"
+                data-position="left" data-delay="50" data-tooltip="Data atual"
+              >
                 <input id="60co_output-2" type="date" class="input_data_color" disabled>
               </div>
             </td>
             <td>
-              <div class="input-field inline">
+              <div class="input-field inline tooltipped"
+                data-position="right" data-delay="50" data-tooltip="Taxa de dose no dia de hoje"
+              >
                 <input id="60co_output-3" type="number" step="any" 
                   class="output_data_color" disabled>
               </div>
