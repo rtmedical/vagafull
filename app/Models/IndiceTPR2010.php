@@ -18,10 +18,10 @@ class IndiceTPR2010 extends Model
         'spreadsheet_id'
     ];
 
-    private static $MV = ['4', '6', '10', '15'];
+    private static $MVs = ['4', '6', '10', '15'];
 
     public static function getMVs() {
-        return self::$MV;
+        return self::$MVs;
     }
 
     public function updateData($data)

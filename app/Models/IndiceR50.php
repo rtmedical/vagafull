@@ -18,10 +18,10 @@ class IndiceR50 extends Model
         'spreadsheet_id'
     ];
 
-    private static $MeV = ['6', '9', '12', '16'];
+    private static $MeVs = ['6', '9', '12', '16'];
 
     public static function getMeVs() {
-        return self::$MeV;
+        return self::$MeVs;
     }
 
     public function updateData($data)
