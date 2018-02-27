@@ -40,9 +40,9 @@ class SpreadsheetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DataValidationFormRequest $request, Spreadsheet $spreadsheet)
+    public function store(DataValidationFormRequest $request)
     {
-        $result = $spreadsheet->saveData($request->all());
+        $result = Spreadsheet::saveData($request->all());
         if ($result['success'])
             return redirect()->route('spreadsheets.show', [$result['data']]);
         else

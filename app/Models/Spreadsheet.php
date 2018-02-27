@@ -30,7 +30,7 @@ class Spreadsheet extends Model
         return $this->hasOne(Decaimento60Co::class);
     }
 
-    public function saveData($data) 
+    public static function saveData($data) 
     {
         $OK = false;
         $result = null;
