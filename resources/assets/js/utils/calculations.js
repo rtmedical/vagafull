@@ -93,31 +93,26 @@ export const calculateAllOutputs = () => {
   calculateSectionD();
 };
 
-let timeoutId;
 export const calculateOnBlur = e => {
   const { target, path } = e;
   const targetId = target.id;
   // path = [input, ..., section-X, ..., html, document, window];
   const sectionId = path[path.length - 9].id;
 
-  if (timeoutId) clearTimeout(timeoutId);
-
-  timeoutId = setTimeout(() => {
-    switch (sectionId) {
-      case "section-a":
-        calculateSectionA(targetId.substr(0, targetId.indexOf("mv_")));
-        break;
-      case "section-b":
-        calculateSectionB(targetId.substr(0, targetId.indexOf("mev_")));
-        break;
-      case "section-c":
-        calculateSectionC();
-        break;
-      case "section-d":
-        calculateSectionD();
-        break;
-      default:
-        break;
-    }
-  }, 500);
+  switch (sectionId) {
+    case "section-a":
+      calculateSectionA(targetId.substr(0, targetId.indexOf("mv_")));
+      break;
+    case "section-b":
+      calculateSectionB(targetId.substr(0, targetId.indexOf("mev_")));
+      break;
+    case "section-c":
+      calculateSectionC();
+      break;
+    case "section-d":
+      calculateSectionD();
+      break;
+    default:
+      break;
+  }
 };

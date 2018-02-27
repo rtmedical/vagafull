@@ -213,7 +213,6 @@ var calculateAllOutputs = function calculateAllOutputs() {
   calculateSectionD();
 };
 
-var timeoutId = void 0;
 var calculateOnBlur = function calculateOnBlur(e) {
   var target = e.target,
       path = e.path;
@@ -222,26 +221,22 @@ var calculateOnBlur = function calculateOnBlur(e) {
   // path = [input, ..., section-X, ..., html, document, window];
   var sectionId = path[path.length - 9].id;
 
-  if (timeoutId) clearTimeout(timeoutId);
-
-  timeoutId = setTimeout(function () {
-    switch (sectionId) {
-      case "section-a":
-        calculateSectionA(targetId.substr(0, targetId.indexOf("mv_")));
-        break;
-      case "section-b":
-        calculateSectionB(targetId.substr(0, targetId.indexOf("mev_")));
-        break;
-      case "section-c":
-        calculateSectionC();
-        break;
-      case "section-d":
-        calculateSectionD();
-        break;
-      default:
-        break;
-    }
-  }, 500);
+  switch (sectionId) {
+    case "section-a":
+      calculateSectionA(targetId.substr(0, targetId.indexOf("mv_")));
+      break;
+    case "section-b":
+      calculateSectionB(targetId.substr(0, targetId.indexOf("mev_")));
+      break;
+    case "section-c":
+      calculateSectionC();
+      break;
+    case "section-d":
+      calculateSectionD();
+      break;
+    default:
+      break;
+  }
 };
 
 /***/ }),
